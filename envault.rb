@@ -5,21 +5,21 @@
 class Envault < Formula
   desc "AI-era .env encryption CLI — never plaintext on disk"
   homepage "https://github.com/frahet/envault"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/frahet/envault/releases/download/v0.1.0/envault_0.1.0_darwin_amd64.tar.gz"
-      sha256 "16a1380811bfc6e70d84e009e444879a61123c137862465c70670a5e99847370"
+      url "https://github.com/frahet/envault/releases/download/v0.1.1/envault_0.1.1_darwin_amd64.tar.gz"
+      sha256 "4011565625871df0d8fc6b1eb97bf8bb6104a60c0e2aed86049734a706ffca69"
 
       define_method(:install) do
         bin.install "envault"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/frahet/envault/releases/download/v0.1.0/envault_0.1.0_darwin_arm64.tar.gz"
-      sha256 "d7ebb3c5972c82f2f5098bf6c340e58f27444e528e12a1f67c03b42a34339220"
+      url "https://github.com/frahet/envault/releases/download/v0.1.1/envault_0.1.1_darwin_arm64.tar.gz"
+      sha256 "0871b7d9bb4f32d99e3ead740b58b68cbbba96ea713f3f2146bfe81e18dcdc73"
 
       define_method(:install) do
         bin.install "envault"
@@ -29,8 +29,8 @@ class Envault < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/frahet/envault/releases/download/v0.1.0/envault_0.1.0_linux_amd64.tar.gz"
-      sha256 "a165b8ca4f2294c7b8f0f18dac8033042efb5a479ecaf8491668769d1119c706"
+      url "https://github.com/frahet/envault/releases/download/v0.1.1/envault_0.1.1_linux_amd64.tar.gz"
+      sha256 "02add94049bb8b8fe2cd005ea06a54279def1587cc0c3a6ad7ff6d35d55e68d2"
       define_method(:install) do
         bin.install "envault"
       end
