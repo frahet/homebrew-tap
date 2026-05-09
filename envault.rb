@@ -5,34 +5,37 @@
 class Envault < Formula
   desc "AI-era .env encryption CLI — never plaintext on disk"
   homepage "https://github.com/frahet/envault"
-  version "0.3.0"
+  version "0.3.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/frahet/envault/releases/download/v0.3.0/envault_0.3.0_darwin_amd64.tar.gz"
-      sha256 "bd4a1f34c5d567754b4454da063c40031643997dbcce0f31b3bbb86a967d3286"
+      url "https://github.com/frahet/envault/releases/download/v0.3.1/envault_0.3.1_darwin_amd64.tar.gz"
+      sha256 "e9d547597b3978659245aeee3cdadc19b4827a522f123a5b7c3a38d63c587c06"
 
       define_method(:install) do
         bin.install "envault"
+        generate_completions_from_executable(bin/"envault", "completion")
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/frahet/envault/releases/download/v0.3.0/envault_0.3.0_darwin_arm64.tar.gz"
-      sha256 "b107e1735f1d286a60f9cb7b7d6260d54fd5203e3b537c9038867bce584a3a3e"
+      url "https://github.com/frahet/envault/releases/download/v0.3.1/envault_0.3.1_darwin_arm64.tar.gz"
+      sha256 "b38b80016e7162d2f78a07aca61d0869d3ead2c5eee0ca0e378659ee7c398465"
 
       define_method(:install) do
         bin.install "envault"
+        generate_completions_from_executable(bin/"envault", "completion")
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/frahet/envault/releases/download/v0.3.0/envault_0.3.0_linux_amd64.tar.gz"
-      sha256 "58688a4e15e9d8e396f4ad3a872fd18d9b43ef255b0d5a6c7272efeafd3b4f34"
+      url "https://github.com/frahet/envault/releases/download/v0.3.1/envault_0.3.1_linux_amd64.tar.gz"
+      sha256 "15f6eb8d4daf08ddfb1d8dc830e8324206a3f2533df7f7a67089c9375bbe8186"
       define_method(:install) do
         bin.install "envault"
+        generate_completions_from_executable(bin/"envault", "completion")
       end
     end
   end
